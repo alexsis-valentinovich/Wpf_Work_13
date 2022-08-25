@@ -43,18 +43,19 @@
                                    Padding="1" 
                                    Margin="1" 
                                    SelectedIndex="0" 
-                                   SelectionChanged="ComboBox_SelectionChanged" 
                                    ItemsSource="{StaticResource fonts}"
-                                   Style="{DynamicResource ComboStyle}"/>
-
-                        <Separator Background="Black"/>
+                                   Style="{DynamicResource ComboStyle}"
+                                   x:Name="comboFont"/>
+                            <!--SelectionChanged="ComboBox_SelectionChanged"-->
+                            <Separator Background="Black"/>
                         <ComboBox  Width="40"
                                    Padding="1"
                                    Margin="1" 
                                    SelectedIndex="0"
-                                   SelectionChanged="ComboBox_SelectionChanged_1"
                                    ItemsSource="{StaticResource size}"
-                                   Style="{DynamicResource ComboStyle}"/>
+                                   Style="{DynamicResource ComboStyle}"
+                                   x:Name="comboSize"/>
+                            <!--SelectionChanged="ComboBox_SelectionChanged_1"-->
                         <Separator Background="Black"/>
                         <Button/>
                         <Button  Height="30" Width="30" Click="Button_Click" BorderThickness="1,1,1,1" Style="{DynamicResource ButtonStyle}">
@@ -75,7 +76,13 @@
                         </StackPanel>
                     </ToolBar>
                 </ToolBarTray>
-                <TextBox x:Name="textBox" Grid.Row="1" Margin="5" Padding="5" TextWrapping="Wrap" >
+                <TextBox x:Name="textBox" 
+                         Grid.Row="1" 
+                         Margin="5" 
+                         Padding="5" 
+                         TextWrapping="Wrap" 
+                         FontSize="{Binding ElementName=comboSize, Path=Text}"
+                         FontFamily="{Binding ElementName=comboFont, Path=Text}">
                 </TextBox>
             </Grid>
         </TabItem>

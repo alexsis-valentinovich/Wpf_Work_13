@@ -95,23 +95,23 @@ namespace Wpf_Work_13
                 File.WriteAllText(SaveFileDialog.FileName, textBox.Text);
             }
         }
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string fontBox = ((sender as ComboBox).SelectedItem as String);
-            if (textBox != null)
-            {
-                textBox.FontFamily = new FontFamily(fontBox);
-            }
-        }
+        //private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    string fontBox = ((sender as ComboBox).SelectedItem as String);
+        //    if (textBox != null)
+        //    {
+        //        textBox.FontFamily = new FontFamily(fontBox);
+        //    }
+        //}
 
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-            double sizeFont = Convert.ToDouble(((sender as ComboBox).SelectedItem as String));
-            if (textBox != null)
-            {
-                textBox.FontSize = sizeFont;
-            }
-        }
+        //private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        //{
+        //    double sizeFont = Convert.ToDouble(((sender as ComboBox).SelectedItem as String));
+        //    if (textBox != null)
+        //    {
+        //        textBox.FontSize = sizeFont;
+        //    }
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -156,9 +156,9 @@ namespace Wpf_Work_13
                 textBox.TextDecorations.Remove(TextDecorations.Underline[0]);
                 (sender as Button).BorderThickness = new Thickness(1, 1, 1, 1);
             }
-        }
+            }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+            private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             if (textBox != null)
             {
@@ -213,6 +213,7 @@ namespace Wpf_Work_13
         private void comboColors_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string comboColors = ((sender as ComboBox).SelectedItem as TextBlock).Text;
+
             if (canvasMy != null)
             {
                 if (comboColors == "Красный")
